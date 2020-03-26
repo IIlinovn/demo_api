@@ -19,5 +19,6 @@ Route::get('/', function () {
 
 Route::get('products', 'ProductController@index');
 Route::get('products/{id}', 'ProductController@show');
+Route::post('products', 'ProductController@update');
 
 
