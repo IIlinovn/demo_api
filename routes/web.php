@@ -21,4 +21,8 @@ Route::get('products', 'ProductController@index');
 Route::get('products/{id}', 'ProductController@show');
 Route::put('products', 'ProductController@update');
 
+Route::get('tasks', 'TaskController@index');
+Route::get('tasks/{id}', 'TaskController@show');
+Route::put('tasks', 'TaskController@update');
+
 
