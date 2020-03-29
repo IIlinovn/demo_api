@@ -81,8 +81,9 @@ class ProductCategoryController extends Controller
      * @param  \App\ProductCategory  $productCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ProductCategory $productCategory)
+    public function destroy($id)
     {
-        dd($productCategory);
+        $productCategory = ProductCategory::find($id);
+        return $productCategory->delete();
     }
 }
