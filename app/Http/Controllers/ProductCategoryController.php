@@ -83,6 +83,6 @@ class ProductCategoryController extends Controller
      */
     public function destroy(ProductCategory $productCategory)
     {
-        //
+        dd($productCategory);
     }
 }
