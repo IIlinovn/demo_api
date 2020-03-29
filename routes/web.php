@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('products/categories', 'ProductCategoryController@index');
+Route::get('products/categories/{id}', 'ProductCategoryController@show');
+Route::put('products/categories', 'ProductCategoryController@update');
+
 Route::get('products', 'ProductController@index');
 Route::get('products/{id}', 'ProductController@show');
 Route::put('products', 'ProductController@update');
