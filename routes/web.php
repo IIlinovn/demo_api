@@ -21,8 +21,13 @@ Route::get('products/categories', 'ProductCategoryController@index');
 Route::get('products/categories/{id}', 'ProductCategoryController@show');
 Route::put('products/categories', 'ProductCategoryController@update');
 
-Route::get('products', 'ProductController@index');
-Route::get('products/{id}', 'ProductController@show');
+Route::get('products', function (){
+    return new \App\Http\Resources\Product(\App\Product::all());
+});
+Route::get('products/{id}', function ($id) {
+    return new \App\Http\Resources\ProductResource(\App\Product::find($id));
+});
+Route::post('products', 'ProductController@create');
 Route::put('products', 'ProductController@update');
 
 Route::get('tasks', 'TaskController@index');
