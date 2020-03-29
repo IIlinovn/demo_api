@@ -14,8 +14,6 @@ class ProductCategoryController extends Controller
      */
     public function index()
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
         return ProductCategory::all();
     }
 

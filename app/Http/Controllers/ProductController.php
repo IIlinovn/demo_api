@@ -14,8 +14,6 @@ class ProductController extends Controller
      */
     public function index()
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
         return Product::all()->map(function ($product) {
             $result = $product;
             $result->categoryFull = $product->categoryFull;
@@ -52,8 +50,6 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
         return Product::find($id);
     }
 
@@ -77,8 +73,6 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
         dd($product);
     }
 

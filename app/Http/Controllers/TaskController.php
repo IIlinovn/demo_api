@@ -15,8 +15,6 @@ class TaskController extends Controller
      */
     public function index()
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
         return Task::all();
     }
 
@@ -49,8 +47,6 @@ class TaskController extends Controller
      */
     public function show($id)
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
         return Task::find($id);
     }
 
@@ -74,8 +70,6 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
         dd($task);
     }
 
