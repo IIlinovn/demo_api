@@ -35,7 +35,8 @@ class ProductCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $productCategory = new ProductCategory($request->all());
+        return $productCategory->save();
     }
 
     /**
@@ -44,9 +45,9 @@ class ProductCategoryController extends Controller
      * @param  \App\ProductCategory  $productCategory
      * @return \Illuminate\Http\Response
      */
-    public function show(ProductCategory $productCategory)
+    public function show($id)
     {
-        //
+        return ProductCategory::find($id);
     }
 
     /**
@@ -69,7 +70,9 @@ class ProductCategoryController extends Controller
      */
     public function update(Request $request, ProductCategory $productCategory)
     {
-        //
+        $productCategory = ProductCategory::find($request->get('id'));
+        $productCategory->fill($request->all());
+        return $productCategory->save();
     }
 
     /**
@@ -80,6 +83,6 @@ class ProductCategoryController extends Controller
      */
     public function destroy(ProductCategory $productCategory)
     {
-        //
+        dd($productCategory);
     }
 }
