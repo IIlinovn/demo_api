@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::get('products/categories', 'ProductCategoryController@index');
 Route::get('products/categories/{id}', 'ProductCategoryController@show');
 Route::put('products/categories', 'ProductCategoryController@update');
+Route::post('products/categories', 'ProductCategoryController@store');
 
 Route::get('products', function (){
     return new \App\Http\Resources\Product(\App\Product::all());
