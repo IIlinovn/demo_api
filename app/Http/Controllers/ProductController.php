@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -73,8 +79,9 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        dd($product);
-    }
+        $product = Product::find($request->get('id'));
+        $product->fill($request->all());
+        return $product->save();    }
 
     /**
      * Remove the specified resource from storage.
