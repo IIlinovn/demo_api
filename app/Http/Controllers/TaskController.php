@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
 use App\Task;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+
     /**
      * Display a listing of the resource.
      *
