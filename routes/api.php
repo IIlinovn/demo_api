@@ -44,3 +44,13 @@ Route::group([
     Route::post('', 'ProductController@create');
     Route::put('{id}', 'ProductController@update');
 });
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'category'
+], function ($router) {
+    Route::get('', 'ProductCategoryController@index');
+    Route::get('{id}', 'ProductCategoryController@show');
+    Route::post('', 'ProductCategoryController@create');
+    Route::put('{id}', 'ProductCategoryController@update');
+});
