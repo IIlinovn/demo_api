@@ -34,7 +34,6 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -45,7 +44,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //Product::cre
+        $product = new Product($request->all());
+        return $product->save();
     }
 
     /**
@@ -89,8 +89,10 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        return $product->delete();
+
     }
 }
