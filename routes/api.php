@@ -28,8 +28,9 @@ Route::group([
     Route::post('refresh', 'AuthController@refresh');
     Route::post('me', 'AuthController@me');
 
-});
+    Route::put('user/{id}', 'UserController@update');
 
+});
 
 Route::group([
     'middleware' => 'api',
@@ -43,6 +44,8 @@ Route::group([
     });
     Route::post('', 'ProductController@create');
     Route::put('{id}', 'ProductController@update');
+
+    Route::post('{id}/image', 'ProductImageController@update');
 });
 
 Route::group([
